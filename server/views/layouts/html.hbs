@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{{# if title }}
+  <title>{{{ title }}}</title>
+{{/ if }}
+{{# each styles as |style| }}
+  <link rel="stylesheet" href="{{{ style }}}"/>
+{{/ each }}
+<body>
+  {{{ body }}}
+</body>
+{{# each scripts as |script| }}
+  <script src="{{{ script }}}"></sript>
+{{/ each }}

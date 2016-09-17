@@ -5,7 +5,7 @@ var exphbs = require('express-handlebars');
 var server = module.exports = function server(router, port) {
   var server = express();
 
-  server.engine('hbs', exphbs({layoutsDir: `${__dirname}/views/layouts`, defaultLayout: 'main', extname: '.hbs'}));
+  server.engine('hbs', exphbs({layoutsDir: `${__dirname}/views/layouts`, defaultLayout: 'html', extname: '.hbs'}));
   server.set('views', `${__dirname}/views`);
   server.set('view engine', 'hbs');
 
@@ -17,4 +17,3 @@ var server = module.exports = function server(router, port) {
 
   return server;
 };
-
