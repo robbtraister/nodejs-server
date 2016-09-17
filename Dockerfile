@@ -4,6 +4,7 @@ RUN apk update \
  && apk upgrade \
  && apk add --update --no-cache \
             nodejs \
+            supervisor \
  && rm -rf /var/cache/apk/*
 
 ENV USER="nodejs" \
@@ -24,4 +25,4 @@ RUN chown -R ${USER}:${USER} ./ \
 
 USER ${USER}
 
-CMD node ./server
+CMD supervisord -c ./supervisord.conf
