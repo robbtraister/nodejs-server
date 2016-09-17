@@ -25,4 +25,5 @@ RUN chown -R ${USER}:${USER} ./ \
 
 USER ${USER}
 
-CMD supervisord -c ./supervisord.conf
+ENTRYPOINT ["supervisord", "-c"]
+CMD ["./supervisord.conf"]
