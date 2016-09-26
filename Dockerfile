@@ -1,1 +1,1 @@
-FROM robbtraister/nodejs_supervisor
+FROM robbtraister/nodejs-supervisor
