@@ -2,6 +2,9 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 
 
+var logger = require('../logger')('server:index');
+
+
 var server = module.exports = function server(router, port) {
   var server = express();
 
@@ -13,7 +16,7 @@ var server = module.exports = function server(router, port) {
 
   port = port || process.env.PORT || 8080;
   server.listen(port);
-  process.stderr.write(`Listening on port: ${port}\n`);
+  logger.info(`Listening on port: ${port}\n`);
 
   return server;
 };
